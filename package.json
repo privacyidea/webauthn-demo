@@ -1,9 +1,11 @@
 {
   "name": "webauthn-demo",
   "version": "1.0.0",
+  "private": true,
   "description": "Example project, showing how to authenticate against privacyIDEA using WebAuthn",
   "main": "index.js",
   "scripts": {
+    "start": "node ./bin/www",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -26,7 +28,12 @@
   },
   "homepage": "https://github.com/privacyidea/webauthn-demo#readme",
   "dependencies": {
-    "express": "^4.17.1"
+    "cookie-parser": "~1.4.4",
+    "debug": "~2.6.9",
+    "express": "~4.16.1",
+    "http-errors": "~1.6.3",
+    "morgan": "~1.9.1",
+    "pug": "2.0.0-beta11"
   },
   "devDependencies": {
     "express-generator": "^4.16.1"
