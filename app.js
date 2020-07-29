@@ -13,10 +13,15 @@ const app = express();
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'pug');
 
+// noinspection JSCheckFunctionSignatures
 app.use(logger('dev'));
+
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
+
+// noinspection JSCheckFunctionSignatures
 app.use(cookieParser());
+
 app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', indexRouter);
@@ -28,6 +33,7 @@ app.use(function(req, res, next) {
 });
 
 // error handler
+// noinspection JSUnusedLocalSymbols
 app.use(function(err, req, res, next) {
   // set locals, only providing error in development
   res.locals.message = err.message;
