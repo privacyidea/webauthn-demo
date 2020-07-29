@@ -1,0 +1,28 @@
+{
+  "name": "webauthn-demo",
+  "version": "1.0.0",
+  "description": "Example project, showing how to authenticate against privacyIDEA using WebAuthn",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/privacyidea/webauthn-demo.git"
+  },
+  "keywords": [
+    "authentication",
+    "two-factor",
+    "mfa",
+    "two-factor-authentication",
+    "2fa",
+    "webauthn",
+    "webauthn-demo"
+  ],
+  "author": "NetKnights GmbH",
+  "license": "AGPL-3.0",
+  "bugs": {
+    "url": "https://github.com/privacyidea/webauthn-demo/issues"
+  },
+  "homepage": "https://github.com/privacyidea/webauthn-demo#readme"
+}
