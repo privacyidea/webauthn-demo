@@ -1,0 +1,3 @@
+[submodule "public/javascripts/vendor/webauthn-client"]
+	path = public/javascripts/vendor/webauthn-client
+	url = https://github.com/privacyidea/webauthn-client
