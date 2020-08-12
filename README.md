@@ -19,7 +19,7 @@ in a submodule. Without this option, the code will not work!**
 If you checked out this repository a while ago, and want to get the newest changes from upstream, you can run:
 
 ```
-$ git pull --recorse-submodules
+$ git pull --recurse-submodules
 ```
 
 ## Configuration
