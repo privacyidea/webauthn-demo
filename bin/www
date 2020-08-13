@@ -4,12 +4,25 @@
  * Module dependencies.
  */
 
+const dotenv = require('dotenv');
 const app = require('../app');
 const debug = require('debug')('webauthn-demo:server');
 const https = require('https');
 
 // FIXME These are pre-built self-signed certificates. Do not use these in production.
 const snakeoil = require('@dazld/snakeoil-certs');
+
+/**
+ * Load environment variables from .env file.
+ */
+
+const env = dotenv.config();
+
+if (env.error) {
+  throw env.error;
+} else {
+  console.debug("Loaded configuration:\n", env.parsed);
+}
 
 /**
  * Get port from environment and store in Express.

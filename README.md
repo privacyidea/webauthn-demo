@@ -28,7 +28,8 @@ $ git pull --recurse-submodules
 ## Configuration
 
 You will have to configure this code with the path to your privacyIDEA installation, as well as the necessary
-credentials for your service account.
+credentials for your service account, by either passing the options ins the environment, or putting them in a file
+named `.env`.
 
 ## Running it
 
