@@ -5,6 +5,9 @@ by, the contents of this repository will be updated shortly.**
 
 Example project, showing how to authenticate against privacyIDEA using WebAuthn.
 
+**Important: This is a demo. Many things are simplified. Please carefully review the comments labeled FIXME
+implementing this yourself. DO NOT USE THIS CODE IN A PRODUCTION ENVIRONMENT!**
+
 ## Getting the code
 
 To fetch this repository, simply run the following:
@@ -36,4 +39,4 @@ $ npm start
 ```
 
 A webserver will come up on port `:3000` (unless configured otherwise), and allow you to test WebAuthn functionality in
-privacyIDEA.
+privacyIDEA. Please make sure to connect using HTTPs.
