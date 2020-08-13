@@ -39,4 +39,6 @@ $ npm start
 ```
 
 A webserver will come up on port `:3000` (unless configured otherwise), and allow you to test WebAuthn functionality in
-privacyIDEA. Please make sure to connect using HTTPs.
+privacyIDEA. Please make sure to connect using HTTPs, as a secure origin is required for WebAuthn to work. Self-signed
+certificates are used for the purposes of this demo, so you will have to bypass a certificate security warning in your
+browser.
