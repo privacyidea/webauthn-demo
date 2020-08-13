@@ -6,7 +6,10 @@
 
 const app = require('../app');
 const debug = require('debug')('webauthn-demo:server');
-const http = require('http');
+const https = require('https');
+
+// FIXME These are pre-built self-signed certificates. Do not use these in production.
+const snakeoil = require('@dazld/snakeoil-certs');
 
 /**
  * Get port from environment and store in Express.
@@ -19,7 +22,12 @@ app.set('port', port);
  * Create HTTP server.
  */
 
-const server = http.createServer(app);
+const server = https.createServer(
+    {
+      key: snakeoil.serviceKey,
+      cert: snakeoil.certificate
+    },
+    app);
 
 /**
  * Listen on provided port, on all network interfaces.
