@@ -1,5 +1,7 @@
 const express = require('express');
 const router = express.Router();
+
+// FIXME Consider using HTTPs when running productively
 const http = require('http');
 
 /* POST request for challenge-response authentication */
