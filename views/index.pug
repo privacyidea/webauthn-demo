@@ -1,5 +1,10 @@
 extends layout
 
 block content
-  h1= title
-  p Welcome to #{title}
+    h1= title
+    p Welcome to #{title}
+    form(action='/login', method='post')
+        input#user(type='text', name='user', placeholder='Username', required)
+        input#pass(type='password', name='pass', placeholder='PIN', required)
+        input#submit(type='submit', name='submit', value='Log in')
+        span.spinner
