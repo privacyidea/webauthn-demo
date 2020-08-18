@@ -1,8 +1,60 @@
 body {
-  padding: 50px;
-  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+    padding: 50px;
+    font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
 }
 
 a {
-  color: #00B7FF;
+    color: #00B7FF;
+}
+
+.success {
+    color: green;
+}
+
+.error {
+    color: red;
+}
+
+.spinner {
+    display: none;
+}
+
+form.processing .spinner {
+    display: inline;
+}
+
+.spinner::after {
+    animation-duration: 1s;
+    animation-name: spinner;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+    animation-timing-function: steps(4, start);
+
+    display: inline;
+    content: 'Loading';
+    font-weight: bold;
+    font-family: monospace;
+    padding: 1em;
+}
+
+@keyframes spinner {
+    0% {
+        content: 'Loading';
+    }
+
+    25% {
+        content: 'Loading.';
+    }
+
+    50% {
+        content: 'Loading..';
+    }
+
+    75% {
+        content: 'Loading...';
+    }
+
+    100% {
+        content: 'Loading....';
+    }
 }
