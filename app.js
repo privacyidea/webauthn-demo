@@ -17,7 +17,7 @@ app.set('view engine', 'pug');
 app.use(logger('dev'));
 
 app.use(express.json());
-app.use(express.urlencoded({ extended: false }));
+app.use(express.urlencoded({extended: false}));
 
 // noinspection JSCheckFunctionSignatures
 app.use(cookieParser());
@@ -28,20 +28,20 @@ app.use('/', indexRouter);
 app.use('/validate/check/', validateCheckRouter);
 
 // catch 404 and forward to error handler
-app.use(function(req, res, next) {
-  next(createError(404));
+app.use(function (req, res, next) {
+    next(createError(404));
 });
 
 // error handler
 // noinspection JSUnusedLocalSymbols
-app.use(function(err, req, res, next) {
-  // set locals
-  res.locals.message = err.message;
-  res.locals.error = err;
+app.use(function (err, req, res, next) {
+    // set locals
+    res.locals.message = err.message;
+    res.locals.error = err;
 
-  // render the error page
-  res.status(err.status || 500);
-  res.render('error');
+    // render the error page
+    res.status(err.status || 500);
+    res.render('error');
 });
 
 module.exports = app;

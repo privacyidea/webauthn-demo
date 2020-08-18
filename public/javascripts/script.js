@@ -153,8 +153,7 @@ window.addEventListener('load', function () {
     try {
         // noinspection BadExpressionStatementJS
         pi_webauthn;
-    }
-    catch (err) {
+    } catch (err) {
         error(new Error("Missing webauthn-client"));
         return;
     }

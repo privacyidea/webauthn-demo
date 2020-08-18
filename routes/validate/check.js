@@ -4,7 +4,7 @@ const http = require('http');
 
 /* POST request for challenge-response authentication */
 // noinspection JSUnusedLocalSymbols
-router.post('/', function(req, res, next) {
+router.post('/', function (req, res, next) {
     console.log(`User ${req.body.user} is trying to authenticate.`);
 
     const postData = JSON.stringify(req.body);
