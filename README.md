@@ -1,8 +1,5 @@
 # webauthn-demo
 
-**Note: This repository does not yet contain any implementation. Please stand
-by, the contents of this repository will be updated shortly.**
-
 Example project, showing how to authenticate against privacyIDEA using WebAuthn.
 
 **Important: This is a demo. Many things are simplified. Please carefully review the comments labeled FIXME
@@ -27,9 +24,8 @@ $ git pull --recurse-submodules
 
 ## Configuration
 
-You will have to configure this code with the path to your privacyIDEA installation, as well as the necessary
-credentials for your service account, by either passing the options ins the environment, or putting them in a file
-named `.env`.
+You will have to configure this code with the hostname and port of your privacyIDEA installation, by either passing
+the options in the environment, or putting them in a file named `.env`. See `example.env` for details.
 
 ## Running it
 
