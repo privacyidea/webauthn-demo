@@ -8,7 +8,11 @@
 const express = require('express');
 const router = express.Router();
 
-/* GET home page. */
+/*
+ * GET home page.
+ *
+ * This renders the markup for the entire app.
+ */
 // noinspection JSUnusedLocalSymbols
 router.get('/', function (req, res, next) {
     res.render('index', {title: 'webauthn-demo'});

@@ -16,7 +16,7 @@ const validateCheckRouter = require('./routes/validate/check');
 
 const app = express();
 
-// view engine setup
+// View engine setup.
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'pug');
 
@@ -34,12 +34,12 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use('/', indexRouter);
 app.use('/validate/check/', validateCheckRouter);
 
-// catch 404 and forward to error handler
+// Catch 404 and forward to error handler.
 app.use(function (req, res, next) {
     next(createError(404));
 });
 
-// error handler
+// Set up error handler.
 // noinspection JSUnusedLocalSymbols
 app.use(function (err, req, res, next) {
     // set locals
