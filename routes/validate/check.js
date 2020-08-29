@@ -1,3 +1,11 @@
+/*
+ * WebAuthn login example.
+ *
+ * This script implements the server-side part of the WebAuthn login functionality. Since this is a minimal example,
+ * not much actually happens in this file. If you haven't already, you'll probably want to read
+ * public/javascripts/script.js first, which contains the client-side part of this example.
+ */
+
 const express = require('express');
 const router = express.Router();
 const http = require('http');

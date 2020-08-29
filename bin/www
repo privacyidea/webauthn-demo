@@ -1,5 +1,12 @@
 #!/usr/bin/env node
 
+/*
+ * Server-side entrypoint.
+ *
+ * This script contains the code to launch the web server hosting the application. If you just want to understand the
+ * WebAuthn part of the example, you do not need to read any of this.
+ */
+
 /**
  * Module dependencies.
  */

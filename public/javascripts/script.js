@@ -1,7 +1,8 @@
 /*
  * WebAuthn login example.
  *
- * This script implements the client-side WebAuthn login functionality.
+ * This script implements the client-side WebAuthn login functionality. If you are here to learn about how to make use
+ * of WebAuthn in your application, you are in the right place.
  */
 
 window.addEventListener('load', function () {

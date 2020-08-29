@@ -1,3 +1,10 @@
+/*
+ * Stylesheet.
+ *
+ * This file contains the visual implementation for the application. If you just want to understand the WebAuthn part
+ * of the example, you do not need to read any of this.
+ */
+
 body {
     padding: 50px;
     font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;

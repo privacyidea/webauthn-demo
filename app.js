@@ -1,3 +1,10 @@
+/*
+ * Application boilerplate.
+ *
+ * This files loads the various parts of the application and handles things like serving static files and handling
+ * errors. If you just want to understand the WebAuthn part of this example, you do not need to read any of this.
+ */
+
 const createError = require('http-errors');
 const express = require('express');
 const path = require('path');
