@@ -1,10 +1,13 @@
 extends layout
 
 block content
-    h1= title
-    p Welcome to #{title}
-    form(action='/login', method='post')
-        input#user(type='text', name='user', placeholder='Username', required)
-        input#pass(type='password', name='pass', placeholder='PIN', required)
-        input#submit(type='submit', name='submit', value='Log in')
-        span.spinner
+    main
+        h1= title
+        p Welcome to #{title}
+        form(action='/login', method='post')
+            input#user(type='text', name='user', placeholder='Username', required)
+            input#pass(type='password', name='pass', placeholder='PIN', required)
+            input#submit(type='submit', name='submit', value='Log in')
+            span.spinner
+    script(src='/javascripts/vendor/webauthn-client/pi-webauthn.js')
+    script(src='/javascripts/script.js')
