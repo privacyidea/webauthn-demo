@@ -165,7 +165,7 @@ window.addEventListener('load', function () {
      * @returns {Promise<object>} The response from privacyIDEA.
      */
     const postValidateCheck = async requestBody => {
-        // The only endpoint needed is /validate/check, it will be used both the request the challenge and to return
+        // The only endpoint needed is /validate/check, it will be used to both request the challenge and return
         // the result. All data will be sent and received encoded as JSON.
         const httpResponse = await fetch('/validate/check', {
             method: 'POST',

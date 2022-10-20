@@ -9,8 +9,7 @@
 const express = require('express');
 const router = express.Router();
 
-// FIXME Consider using HTTPs when running productively
-const http = require('http');
+const https = require('https');
 
 /*
  * POST request for challenge-response authentication.
@@ -43,12 +42,14 @@ router.post('/', function (req, res, next) {
      * expect. The Content-Length of the request is the length of the data from the client, that we have already
      * assembled above, and we will pass through the Origin specified by the Client unaltered.
      */
-    const clientRequest = http.request(
+    const clientRequest = https.request(
         {
             method: 'POST',
             host: process.env.PI_HOST,
             port: process.env.PI_PORT,
             path: '/validate/check',
+            // FIXME: The privacyIDEA server should have a valid certificate
+            rejectUnauthorized: false,
             headers: {
                 'Accept': 'application/json',
                 'Content-Type': 'application/json',
@@ -88,14 +89,18 @@ router.post('/', function (req, res, next) {
                     //  place. In a productive application, you will want to create a session for the user,
                     //  augmenting your response with something like a session ID, or a token, that the client can then
                     //  use for onward access into your system. Remember to never handle authorization on the client.
-                    console.log(`User ${data.detail.user.id} has authenticated successfully!`);
+                    if (data.detail.user) {
+                        console.log(`User ${data.detail.user.username} has authenticated successfully!`);
+                    } else {
+                        console.log(`Authentication successful with token ${data.detail.serial}.`);
+                    }
                 }
 
                 // Our response to the client will again be JSON.
                 res.set('Content-Type', 'application/json');
 
                 // If we have a valid response from privacyIDEA, we will pass on the HTTP status code otherwise the
-                // return code will be 502 BAD GATAWAY.
+                // return code will be 502 BAD GATEWAY.
                 res.status(data ? msg.statusCode : 502);
 
                 // For this example that response is simply the data received from privacyIDEA. In a real application

@@ -10,8 +10,7 @@
 /**
  * Module dependencies.
  */
-
-const dotenv = require('dotenv');
+const dotenv = require('dotenv').config();
 const app = require('../app');
 const debug = require('debug')('webauthn-demo:server');
 const https = require('https');
@@ -22,19 +21,15 @@ const snakeoil = require('@dazld/snakeoil-certs');
 /*
  * Load environment variables from .env file.
  */
-
-const env = dotenv.config();
-
-if (env.error) {
-    throw env.error;
+if (dotenv.error) {
+    throw dotenv.error;
 } else {
-    console.debug("Loaded configuration:\n", env.parsed);
+    console.log("Loaded configuration:\n", dotenv.parsed);
 }
 
 /*
  * Get port from environment and store in Express.
  */
-
 const port = normalizePort(process.env.PORT || '3000');
 app.set('port', port);
 
@@ -51,6 +46,7 @@ const server = https.createServer(
 /*
  * Listen on provided port, on all network interfaces.
  */
+debug('start listening');
 
 server.listen(port);
 server.on('error', onError);
